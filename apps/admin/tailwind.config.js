@@ -1,6 +1,5 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
-import { Inter } from 'next/font/google';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

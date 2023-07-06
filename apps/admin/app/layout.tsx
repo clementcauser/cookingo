@@ -1,6 +1,8 @@
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './global.css';
 import { PropsWithChildren } from 'react';
+import { ReduxProvider } from '../store/provider';
+import GlobalLoadingContainer from '../components/GlobalLoadingContainer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,7 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="fr" className={`${inter.variable} ${roboto_mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ReduxProvider>
+          <GlobalLoadingContainer>{children}</GlobalLoadingContainer>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }
